@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@font-face {
+  font-family: 'integralCFBold';
+  src: url('../public/fonts/Fontspring-DEMO-integralcf-bold.otf');
+}
+
+@font-face {
+  font-family: 'SatoshiBold';
+  src: url('../public/fonts/Satoshi-Bold.otf');
+}
+
+@font-face {
+  font-family: 'SatoshiMedium';
+  src: url('../public/fonts/Satoshi-Medium.otf');
+}
+
+@font-face {
+  font-family: 'SatoshiRegular';
+  src: url('../public/fonts/Satoshi-Regular.otf');
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

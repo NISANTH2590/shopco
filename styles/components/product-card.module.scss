@@ -1,0 +1,78 @@
+@import '../resolution.scss';
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    .productImageWrapper {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+
+        .productImage {
+            width: fit-content;
+            height: fit-content;
+            border-radius: 15px;
+
+            @include responsive('small') {
+                height: 200.01px;
+                width: 198px;
+            }
+
+            @include responsive('medium') {
+                height: 268px;
+                width: 265px;
+            }
+        }
+    }
+
+    .productContent {
+        display: flex;
+        flex-direction: column;
+
+        .productName {
+            font-family: 'satoshiBold';
+
+            @include responsive('small') {
+                font-size: 14px;
+            }
+
+            @include responsive('medium') {
+                font-size: 18px;
+            }
+        }
+
+        .productRating {
+            display: flex;
+            // width: 100%;
+
+            .starImage {
+                object-fit: contain;
+            }
+        }
+
+        .productPrice {
+            display: flex;
+            gap: 10px;
+
+            font-family: 'satoshiBold';
+            font-size: 16px;
+
+            .productActualPrice {
+                color: #999999;
+            }
+
+            .discountPercentage {
+                font-size: 8px;
+                width: 38px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 18px;
+                color: #FF3333;
+                background-color: #FAEAFB;
+            }
+        }
+    }
+}

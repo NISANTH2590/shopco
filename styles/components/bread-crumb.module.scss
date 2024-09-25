@@ -1,0 +1,9 @@
+.breadCrumb {
+    width: 100%;
+    display: flex;
+    color: #969696;
+
+    .subPathName:last-child {
+        color: #000000;
+    }
+}

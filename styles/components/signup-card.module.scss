@@ -1,0 +1,62 @@
+@import '../resolution.scss';
+
+.cardWrapper {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background-color: #ffffff;
+ 
+    @include responsive('small') {
+        gap: 25px;
+        border-radius: 10px;
+        padding: 5px 10px;
+    }
+
+    @include responsive('medium') {
+        max-width: 400px;
+        gap: 30px;
+        border-radius: 20px;
+        padding: 10px 20px;
+    }
+
+    .brandName {
+        display: flex;
+        font-family: "integralCFBold";
+        justify-content: center;
+
+        @include responsive('small') {
+            font-size: 25px;
+        }
+    
+        @include responsive('medium') {
+            font-size: 55px;
+        }
+    }
+
+    .welcomeText {
+        display: flex;
+        justify-content: center;
+    }
+
+    .rememberResetSection {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .rememberSection {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    .noAccountSection {
+        .noAccountText {
+            font-family: 'satoshiRegular';
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+}

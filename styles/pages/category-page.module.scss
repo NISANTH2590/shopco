@@ -1,0 +1,12 @@
+@import '../resolution.scss';
+
+
+.categoryPageLayout {
+    @include responsive('small') {
+
+    }
+
+    @include responsive('medium') {
+        padding: 20px 100px;
+    }
+}

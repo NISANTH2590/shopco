@@ -1,0 +1,101 @@
+@import '../resolution.scss';
+
+.dressCategory {
+    background-color: #F0F0F0;
+
+    @include responsive('small') {
+        margin: 50px 16px 0px;
+        padding: 0px 24px;
+        border-radius: 25px;
+    }
+
+    @include responsive('medium') {
+        margin: 80px 100px 0px;
+        padding: 0px 64px;
+        border-radius: 15px;
+    }
+
+    .heading {
+        font-family: 'integralCFBold';
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @include responsive('small') {
+            font-size: 32px;
+            padding: 40px 0px 28px 0px;
+            text-align: center;
+
+        }
+
+        @include responsive('medium') {
+            font-size: 40px;
+            padding: 70px 0px 64px 0px;
+        }
+
+    }
+
+    .cards {
+        font-style: 'satoshiBold';
+        flex-wrap: wrap;
+        position: relative;
+
+        @include responsive('small') {
+            font-size: 24px;
+            gap: 20px;
+            display: block;
+        }
+
+        @include responsive('medium') {
+            font-size: 36px;
+            gap: 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            position: relative;
+            cursor: pointer;
+
+            @include responsive('small') {
+                width: 100%;
+            }
+
+            .cardImage {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+
+                .image {
+                    width: 100%;
+
+                    @include responsive('small') {
+                        height: 190px;
+                    }
+
+                    @include responsive('medium') {
+                        height: 229px;
+                    }
+
+                    object-position: 90%;
+                    border-radius: 15px;
+                }
+            }
+
+            .cardName {
+                position: absolute;
+
+                @include responsive('small') {
+                    top: 16px;
+                    left: 24px;
+
+                }
+
+                @include responsive('medium') {
+                    top: 25px;
+                    left: 36px;
+                }
+            }
+        }
+    }
+}

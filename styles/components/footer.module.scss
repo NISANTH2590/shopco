@@ -1,0 +1,196 @@
+@import '../resolution.scss';
+
+
+.footer {
+    position: relative;
+
+    @include responsive('small') {
+        margin-top: 180px;
+    }
+
+    @include responsive('medium') {
+        margin-top: 170px;
+    }
+
+    .latestOffersWrapper {
+        position: absolute;
+        z-index: 1;
+        top: -195px;
+    }
+
+    .footerWrapper {
+        background-color: #F0F0F0;
+        width: 100%;
+        position: relative;
+
+        @include responsive('small') {
+            padding: 200px 17px 78px 17px;
+        }
+
+        @include responsive('medium') {
+            padding: 140px 100px 90px 100px;
+        }
+
+        .footerTopContent {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 50px;
+
+            @include responsive('small') {
+                flex-direction: column;
+            }
+
+            .about {
+                @include responsive('small') {}
+
+                @include responsive('medium') {
+                    max-width: 248px;
+                }
+
+                .heading {
+                    font-family: 'integralCFBold';
+                    font-size: 33.45px;
+
+                    @include responsive('small') {
+                        margin-bottom: 14px;
+                    }
+
+                    @include responsive('medium') {
+                        margin-bottom: 25px;
+                    }
+                }
+
+                .description {
+                    font-family: 'sathoshiRegular';
+                    font-family: 14px;
+                    color: #A8A8A8;
+
+                    @include responsive('small') {
+                        margin-bottom: 20px;
+                    }
+
+                    @include responsive('medium') {
+                        margin-bottom: 35px;
+                    }
+                }
+
+                .links {
+                    display: flex;
+                    gap: 12px;
+
+                    @include responsive('small') {
+                        margin-bottom: 25px;
+                    }
+
+                    .imageWrapper {
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        border: solid 1px #D8D8D8;
+                        object-fit: cover;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .image {
+                            height: auto;
+                            width: fit-content;
+                        }
+                    }
+                }
+            }
+
+            .footerLinks {
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+
+
+                @include responsive('small') {
+                    justify-content: space-between;
+                }
+
+                @include responsive('medium') {
+                    justify-content: space-evenly;
+                }
+
+                .footerLink {
+
+                    @include responsive('small') {
+                        flex-grow: 1;
+                        width: 45%;
+                        margin-bottom: 15px;
+                    }
+
+                    .footerHeading {
+                        font-family: 'satoshiMedium';
+                        font-size: 16px;
+                    }
+
+                    .footerSection {
+                        display: flex;
+                        flex-direction: column;
+                        color: #A8A8A8;
+
+                        @include responsive('small') {
+                            margin-top: 16px;
+                        }
+
+                        @include responsive('medium') {
+                            margin-top: 16px;
+                        }
+
+                        .footerContent {
+                            font-family: 'satoshiRegular';
+
+                            @include responsive('small') {
+                                font-size: 14px;
+                            }
+
+                            @include responsive('medium') {
+                                margin-top: 10px;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .horizontalLine {
+            border: 1px solid #A8A8A8;
+        }
+
+        .footerBottomContent {
+            display: flex;
+
+            @include responsive('small') {
+                margin-top: 16px;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            @include responsive('medium') {
+                margin-top: 25px;
+                justify-content: space-between;
+            }
+
+            .copyRight {
+                font-family: 'satoshiRegular';
+                font-size: 14px;
+                color: #A8A8A8;
+            }
+
+            .footerImages {
+                .footerImage {
+                    height: fit-content;
+                    width: fit-content;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

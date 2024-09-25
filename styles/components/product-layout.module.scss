@@ -1,0 +1,110 @@
+@import '../resolution.scss';
+
+.productLayoutWrapper {
+    width: 100%;
+
+    @include responsive('small') {
+        padding: 0px 16px;
+    }
+
+    @include responsive('medium') {
+        padding: 0px 80px;
+    }
+
+    .layoutProductTitle {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-family: 'integralCFBold';
+        font-size: 48px;
+
+        @include responsive('small') {
+            font-size: 32px;
+            margin-top: 50px;
+        }
+
+        @include responsive('medium') {
+            margin-top: 72px;
+        }
+    }
+
+    .layoutCommentsTitle {
+        font-family: 'integralCFBold';
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        @include responsive('small') {
+            font-size: 32px;
+            margin-top: 50px;
+        }
+
+        @include responsive('medium') {
+            font-size: 48px;
+            margin-top: 80px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 16px;
+            cursor: pointer;
+        }
+    }
+
+    .productCards {
+        display: flex;
+        width: 100%;
+
+        @include responsive('small') {
+            margin-top: 32px;
+            gap: 16px;
+            flex-direction: row;
+            overflow-x: scroll;
+        }
+
+        @include responsive('medium') {
+            flex-wrap: wrap;
+            margin-top: 55px;
+            gap: 20px;
+        }
+    }
+
+    .commentCards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        @include responsive('small') {}
+
+        @include responsive('medium') {}
+    }
+
+    .moreProductsButton {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 36px;
+
+        @include responsive('small') {
+            display: none;
+        }
+    }
+}
+
+.signupLayoutWrapper {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    background-color: #F8F8F8;
+
+    @include responsive('small') {
+        padding: 20px 16px;
+    }
+
+    @include responsive('medium') {
+        padding: 40px 80px;
+    }
+
+}

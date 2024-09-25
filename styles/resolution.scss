@@ -1,0 +1,15 @@
+$small: 412px;
+$medium: 790px;
+
+$breakpoints: (
+    "small": "(max-width: #{$small})",
+    "medium": "(min-width: #{$medium})"
+);
+
+@mixin responsive($size) {
+    $query: map-get($breakpoints, $size);
+
+    @media #{$query} {
+        @content;
+    }
+}

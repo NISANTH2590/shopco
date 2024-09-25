@@ -1,0 +1,106 @@
+$small: 412px;
+$medium: 790px;
+
+.navbarWrapper {
+    display: flex;
+    max-width: 1262px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    @media screen and (max-width : $small) {
+        margin-top: 14px;
+        height: 38px;
+        justify-content: space-between;
+        font-size: 25.2px;
+        padding: 0px 16px;
+
+        .mobileNavLeftItems {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .hamBurgerIcon {
+            margin-top: 5px;
+            display: block;
+        }
+
+
+    }
+
+    @media screen and (min-width : $medium) {
+        height: 48px;
+        margin-top: 20px;
+        gap: 40px;
+        padding: 0px 30px;
+
+        .hamBurgerIcon {
+            display: none;
+        }
+    }
+
+    .brandName {
+        font-family: 'integralCFBold';
+    }
+
+    .navItems {
+        @media screen and (max-width : $small) {
+            display: none;
+        }
+
+        font-family: 'SatoshiRegular';
+        font-size: 14px;
+        display: flex;
+        max-width: 350px;
+        gap: 24px;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .searchBar {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 8px;
+        padding: 10px;
+        border-radius: 25px;
+        background-color: #F0F0F0;
+
+        @media screen and (max-width : $small) {
+            display: none;
+        }
+
+        .searchBarInput {
+            padding: 5px;
+            width: 100%;
+            border: none;
+            background-color: #F0F0F0;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .navEndItems {
+        display: flex;
+
+        @media screen and (max-width : $small) {
+            gap: 12px;
+
+            &> :nth-child(1) {
+                display: block;
+            }
+        }
+
+        @media screen and (min-width : $medium) {
+            gap: 14px;
+
+            &> :nth-child(1) {
+                display: none;
+            }
+        }
+
+    }
+}

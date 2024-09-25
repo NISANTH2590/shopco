@@ -1,0 +1,100 @@
+@import '../resolution.scss';
+
+.latestOffersWrapper {
+    background-color: black;
+    border-radius: 20px;
+
+    @include responsive('small') {
+        padding: 0px 24px;
+        margin: 50px 17px 0px 17px;
+    }
+
+    @include responsive('medium') {
+        padding: 36px 64px;
+        margin: 80px 100px 0px 100px;
+        display: flex;
+    }
+
+    .heading {
+        font-family: 'integralCFBold';
+        color: #ffffff;
+
+        @include responsive('small') {
+            font-size: 30px;
+            width: 100%;
+            padding: 32px 0px;
+        }
+
+        @include responsive('medium') {
+            font-size: 40px;
+            width: 60%;
+        }
+
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 14px;
+
+        @include responsive('small') {
+            width: 100%;
+        }
+
+        @include responsive('medium') {
+            width: 40%;
+        }
+
+        .inputFieldWrapper {
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
+            border-radius: 20px;
+            padding: 12px 16px;
+
+            @include responsive('small') {
+                width: 100%;
+            }
+
+            .inputField {
+                border: none;
+                font-family: 'sathoshiRegular';
+                font-size: 16px;
+                color: #999999;
+                width: 100%;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+
+        .subscribeButtonWrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 0px;
+
+            @include responsive('small') {
+                width: 100%;
+            }
+
+            .subscribeButton {
+                cursor: pointer;
+                font-family: 'sathoshiMedium';
+                font-size: 16px;
+                color: #000000;
+                border-radius: 25px;
+                border: none;
+                width: 100%;
+                padding: 12px 55.5px;
+            }
+        }
+    }
+}
