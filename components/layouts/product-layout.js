@@ -6,12 +6,13 @@ import Button from '../button';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import CommentCard from '../comment-card';
+import useDropDown from '../hooks/useDropdown';
 
 // import { useEffect, useState } from 'react';
 // import { collection, getDocs } from "firebase/firestore";
 // import { db } from '../config/firebase';
 
-const ProductLayout = ({ initialData, title, titleClassName, cardClassName, inputs, actions, moreButton }) => {
+const ProductLayout = ({ initialData, title, titleClassName, cardClassName, inputs, actions, moreButton, filters }) => {
 
     let [initialDatas, setinitialDatas] = useState(initialData);
     let [datas, setLayoutDatas] = useState(inputs.slice(0, initialData));
@@ -19,6 +20,17 @@ const ProductLayout = ({ initialData, title, titleClassName, cardClassName, inpu
     let [start, setStartIndex] = useState(initialData);
     let [end, setEndIndex] = useState(inputs.length - 1);
     let [moreButtonVisibility, setMoreButtonVisibility] = useState(true);
+    let [indexOne, setIndexOne] = useState(1);
+
+
+    let options = [
+        { label: "most popular", value: "popular" },
+        { label: "most cheaper", value: "cheaper" },
+        { label: "most costlier", value: "costlier" }
+    ];
+
+    let [filter, setFilter] = useState(options[0]);
+
 
     useEffect(() => {
         setLayoutDatas(inputs.slice(0, initialDatas))
@@ -80,26 +92,44 @@ const ProductLayout = ({ initialData, title, titleClassName, cardClassName, inpu
     //         }
     //     }
 
-    //     fetchData();
+    // fetchData();
     //     return () => {
     //         // Cleanup code here (if necessary)
     //     };
     // }, []);
 
     return (
-        < div className={styles.productLayoutWrapper} >
+        <div className={styles.productLayoutWrapper} style={filters ? { "padding": "0px" } : null} >
             {
                 title ?
-                    <div className={styles[titleClassName]} >
-                        {title}
-
-                        {
-                            actions ? <div className={styles.actions} >
-                                <Image onClick={prevSlide} src={'/arrow-left.png'} width={24} height={24} alt='arrow-left' />
-                                <Image onClick={nextSlide} src={'/arrow-right.png'} width={24} height={24} alt='arrow-right' />
-                            </div> : null
-                        }
-                    </div> : null
+                    filters ?
+                        <div className={styles.productListingPageFilterSection}>
+                            <div className={styles[titleClassName]} >
+                                {title}
+                            </div>
+                            <div className={styles.displayedProductFilterSection}>
+                                {/* <div className={styles.totalProductsSection}> */}
+                                Showing {indexOne}-{indexOne + 9} of {inputs.length} Products
+                                {/* </div> */}
+                                <div className={styles.sortBySectionDesktop}>
+                                    Sort by: <useDropDown setSelectedOption={setFilter} value={filter} options={options} />
+                                </div>
+                                <div className={styles.sortBySectionMobile}>
+                                    <Image src={'/sortFilterMob.png'} width={13.5} height={12.5} alt='mob-filter' />
+                                </div>
+                            </div>
+                        </div>
+                        :
+                        <div className={styles[titleClassName]} >
+                            {title}
+                            {
+                                actions ?
+                                    <div className={styles.actions} >
+                                        <Image onClick={prevSlide} src={'/arrow-left.png'} width={24} height={24} alt='arrow-left' />
+                                        <Image onClick={nextSlide} src={'/arrow-right.png'} width={24} height={24} alt='arrow-right' />
+                                    </div> : null
+                            }
+                        </div> : null
             }
             {
                 actions ?
@@ -117,21 +147,23 @@ const ProductLayout = ({ initialData, title, titleClassName, cardClassName, inpu
                         {
                             datas.map((product, ind) => {
                                 return (
-                                    <ProductCard key={ind} productName={product.name} discountPrice={product.discountPrice} originalPrice={product.originalPrice} rating={product.rating} img_url={product.img_url} />
+                                    <ProductCard productCardClassName={filters ? 'productListingCard' : 'productCard'} key={ind} productName={product.name} discountPrice={product.discountPrice} originalPrice={product.originalPrice} rating={product.rating} img_url={product.img_url} />
                                 )
                             })
                         }
                     </div>
             }
-
             {
                 moreButton && moreButtonVisibility ?
                     <div className={styles.moreProductsButton}>
                         <Button clickFunction={updateDatas} name={'View All'} color={'black'} backgroundColor={'white'} borderRadius={'25px'} border={'solid 2px #F0EEED'} width={'218px'} height={'52px'} />
                     </div> : null
             }
-
-
+            {
+                filters ?
+                    <div className={styles.paginationWrapper}>
+                    </div> : null
+            }
         </div >
     )
 };

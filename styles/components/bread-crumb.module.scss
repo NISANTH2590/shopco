@@ -1,7 +1,19 @@
+@import '../resolution.scss';
+
 .breadCrumb {
     width: 100%;
     display: flex;
     color: #969696;
+    font-family: 'satoshiRegular';
+
+    @include responsive('small') {
+        margin-left: 16px;
+        font-size: 14px;
+    }
+
+    @include responsive('medium') {
+        font-size: 16px;
+    }
 
     .subPathName:last-child {
         color: #000000;

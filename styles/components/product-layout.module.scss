@@ -4,7 +4,7 @@
     width: 100%;
 
     @include responsive('small') {
-        padding: 0px 16px;
+        padding: 20px 20px !important;
     }
 
     @include responsive('medium') {
@@ -51,6 +51,87 @@
         }
     }
 
+    .productListingPageFilterSection {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .layoutListingTitle {
+            font-family: 'satoshiBold';
+            text-transform: capitalize;
+
+            @include responsive('small') {
+                font-size: 24px;
+            }
+
+            @include responsive('medium') {
+                font-size: 32px;
+            }
+        }
+
+        .displayedProductFilterSection {
+            display: flex;
+            color: #969696;
+
+            @include responsive('small') {
+                font-size: 14px;
+                gap: 8px;
+                align-items: center;
+
+                .sortBySectionDesktop {
+                    display: none;
+                }
+
+                .sortBySectionMobile {
+                    display: flex;
+                    height: 24px;
+                    width: 24px;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background-color: #F0EEED;
+                }
+            }
+
+            @include responsive('medium') {
+                font-size: 16px;
+                gap: 12px;
+                align-items: center;
+
+                .sortBySectionMobile {
+                    display: none;
+                }
+
+                .sortBySectionDesktop {
+                    display: flex;
+                    gap: 6px;
+                    align-items: center;
+                }
+            }
+
+
+        }
+    }
+
+    .productListingPageCards {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include responsive('small') {
+            margin-top: 32px;
+            gap: 16px;
+        }
+
+        @include responsive('medium') {
+            margin-top: 55px;
+            gap: 20px;
+            justify-content: space-between;
+        }
+    }
+
+
     .productCards {
         display: flex;
         width: 100%;
@@ -65,6 +146,7 @@
         @include responsive('medium') {
             flex-wrap: wrap;
             margin-top: 55px;
+            justify-content: center;
             gap: 20px;
         }
     }
@@ -72,6 +154,7 @@
     .commentCards {
         display: flex;
         flex-direction: row;
+        justify-content: center;
         flex-wrap: wrap;
         gap: 20px;
 

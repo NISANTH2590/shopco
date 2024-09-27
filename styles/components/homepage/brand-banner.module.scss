@@ -4,17 +4,20 @@
 .brandBanner {
     background-color: black;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
 
     @include responsive('small') {
         height: 146px;
-        padding: 0px 16px;
+        padding: 40px 5px 10px 5px;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
     }
 
     @include responsive('medium') {
         height: 122px;
+        align-items: center;
+        justify-content: space-between;
         padding: 0px 100px;
     }
 

@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const defaulRating = [1, 1, 1, 1, 1];
 
-const ProductCard = ({ productName, discountPrice, originalPrice, rating, img_url }) => (
+const ProductCard = ({productCardClassName, productName, discountPrice, originalPrice, rating, img_url }) => (
 
-    <div className={styles.productCard}>
+    <div className={styles[productCardClassName]}>
         <div className={styles.productImageWrapper}>
             <Image className={styles.productImage} alt='i' src={img_url} width={0} height={0} sizes='100vw' />
         </div>

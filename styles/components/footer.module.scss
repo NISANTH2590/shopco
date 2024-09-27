@@ -3,6 +3,8 @@
 
 .footer {
     position: relative;
+    display: flex;
+    justify-content: center;
 
     @include responsive('small') {
         margin-top: 180px;

@@ -132,8 +132,8 @@ const homepage = () => {
     <>
       <HeroSection />
       <BrandBanner />
-      <ProductLayout titleClassName={'layoutProductTitle'} cardClassName={'productCards'} inputs={productsData} initialData={4} title={'NEW ARRIVALS'} moreButton={'View All'} />
-      <ProductLayout titleClassName={'layoutProductTitle'} cardClassName={'productCards'} inputs={productsData} initialData={4} title={'TOP SELLING'} moreButton={'View All'} />
+      <ProductLayout titleClassName={'layoutProductTitle'} cardClassName={'productCards'} inputs={productsData} initialData={4} title={'NEW ARRIVALS'} filters={false} actions={false} moreButton={'View All'} />
+      <ProductLayout titleClassName={'layoutProductTitle'} cardClassName={'productCards'} inputs={productsData} initialData={4} title={'TOP SELLING'} filters={false} actions={false} moreButton={'View All'} />
 
       <div className={styles.dressCategory}>
         <div className={styles.heading}>

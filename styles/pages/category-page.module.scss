@@ -1,12 +1,19 @@
 @import '../resolution.scss';
 
+.productListingPageLayout {
 
-.categoryPageLayout {
-    @include responsive('small') {
-
-    }
+    @include responsive('small') {}
 
     @include responsive('medium') {
         padding: 20px 100px;
     }
+
+    .productsLayout {
+        @include responsive('small') {}
+
+        @include responsive('medium') {
+            margin: 24px 0px 0px 200px;
+        }
+    }
+
 }

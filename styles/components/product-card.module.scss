@@ -76,3 +76,100 @@
         }
     }
 }
+
+.productListingCard {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    @include responsive('small') {
+        max-width: 152px;
+    }
+
+    .productImageWrapper {
+        height: auto;
+        object-fit: cover;
+
+        .productImage {
+            width: fit-content;
+            height: fit-content;
+            border-radius: 15px;
+
+            @include responsive('small') {
+                height: 164px;
+                width: 152px;
+            }
+
+            @include responsive('medium') {
+                height: 268px;
+                width: 265px;
+            }
+        }
+    }
+
+    .productContent {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .productName {
+            font-family: 'satoshiBold';
+
+            @include responsive('small') {
+                font-size: 14px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            @include responsive('medium') {
+                font-size: 18px;
+            }
+        }
+
+        .productRating {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            // justify-content: space-between;
+
+            @include responsive('small') {
+                font-size: 12px;
+            }
+
+            .starImage {
+                object-fit: contain;
+
+                @include responsive('small') {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+
+
+        }
+
+        .productPrice {
+            display: flex;
+            gap: 10px;
+
+            font-family: 'satoshiBold';
+            font-size: 16px;
+
+            .productActualPrice {
+                color: #999999;
+            }
+
+            .discountPercentage {
+                font-size: 8px;
+                width: 38px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 18px;
+                color: #FF3333;
+                background-color: #FAEAFB;
+            }
+        }
+    }
+}

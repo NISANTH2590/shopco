@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import styles from '@/styles/components/bread-crumb.module.scss'
+import Link from "next/link";
 
 const BreadCrumbs = () => {
 
@@ -10,13 +11,13 @@ const BreadCrumbs = () => {
     return (
         <div className={styles.breadCrumb}>
             {
-                `Home `
+                <Link href={'/home'} >Home</Link>
             }
             {
                 pathNames.map((path, index) => {
                     return (
                         <div className={styles.subPathName} key={index}>
-                            {!parseInt(path) ? path : null}
+                            {path == "category" ? 'category' : !parseInt(path) ? <Link href={`/category/${path}`} >{path}</Link> : null}
                             &nbsp;
                             {
                                 (!parseInt(path)) && (index != pathNames.length - 1) ? `>` : null
