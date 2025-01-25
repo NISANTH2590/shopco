@@ -30,7 +30,6 @@ export default function RootLayout({ children }) {
     if (timeStamp) {
       let currentTime = new Date();
       let sixHoursLater = new Date(timeStamp + 6 * 60 * 60 * 1000);
-      // console.log(currentTime,sixHoursLater)
       if (currentTime >= sixHoursLater) {
         showDiscountBanner(true);
       } else {

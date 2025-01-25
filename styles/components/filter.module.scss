@@ -1,0 +1,182 @@
+@import '../resolution.scss';
+
+
+.filterLayout {
+
+    @include responsive('small') {
+        width: 100%;
+        border-top: 2px solid red;
+        border-radius: 20px 20px 0px 0px;
+        padding: 20px;
+        position: absolute;
+        background-color: #FFF;
+        height: fit-content;
+        animation: bottomToUp 600ms ease-in forwards;
+    }
+
+    @keyframes bottomToUp {
+        from {
+            top: 100vh;
+        }
+
+        to {
+            top: -20px;
+        }
+    }
+
+    @include responsive('medium') {
+        // width: 62%;
+        max-width: 260px;
+        height: fit-content;
+        margin: 35px 15px 15px 15px;
+        border-radius: 17px;
+        padding: 14px;
+        border: 1px solid #F0EEED;
+    }
+
+    .filterHeadingSection {
+        display: flex;
+        cursor: pointer;
+        font-family: "SatoshiBold";
+        justify-content: space-between;
+        align-items: center;
+
+        @include responsive('small') {
+            width: 100%;
+        }
+
+        @include responsive('medium') {
+            width: 100%;
+        }
+    }
+
+    .horizontalLine {
+        height: 1px;
+        background-color: #F0EEED;
+
+        @include responsive('small') {
+            margin: 14px 0px;
+            width: 100%;
+        }
+
+        @include responsive('medium') {
+            margin: 24px 0px;
+            width: 100%;
+        }
+    }
+
+    .filterName {
+
+        font-family: 'SatoshiRegular';
+        color: #969696;
+        font-size: 13px;
+    }
+
+    .colorWrapper {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: start;
+
+        .colorDiv {
+            cursor: pointer;
+            border: 1px solid #969696;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        .selectedColorDiv {
+            cursor: pointer;
+            border: 1px solid transparent;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-image: url('../../public/tick.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    .sizeFilterWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .size {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            border-radius: 20px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            font-family: 'SatoshiRegular';
+            color: #969696;
+            font-size: 13px;
+            padding: 10px;
+            height: 30px;
+        }
+
+        .selectedSize {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            border-radius: 20px;
+            background-color: #000;
+            cursor: pointer;
+            font-family: 'SatoshiRegular';
+            color: white;
+            font-size: 13px;
+            padding: 10px;
+            height: 30px;
+        }
+    }
+
+
+    .styleFilterWrapper {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        font-family: 'SatoshiRegular';
+
+        .style {
+            color: #969696;
+
+            @include responsive('medium') {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .rangeSlider {
+        height: 7px;
+
+        .range-slider__thumb {
+            width: 10px !important;
+            height: 10px !important;
+        }
+    }
+
+    .applyFilterButton {
+        width: 100%;
+        background-color: #000;
+        border: solid 2px transparent;
+        cursor: pointer;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        margin: 30px 0px;
+        padding: 10px;
+        font-family: 'SatoshiRegular';
+
+        @include responsive('medium') {
+            font-size: 13px;
+        }
+    }
+}

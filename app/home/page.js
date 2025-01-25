@@ -1,4 +1,3 @@
-import Footer from "@/components/layouts/footer";
 import BrandBanner from "@/components/homepage/brand-banner";
 import HeroSection from "@/components/homepage/hero-content";
 import ProductLayout from "@/components/layouts/product-layout";

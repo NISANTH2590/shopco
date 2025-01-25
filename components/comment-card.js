@@ -30,7 +30,7 @@ const CommentCard = ({ rating, name, description }) => {
                 </div>
             </div>
             <div className={styles.description}>
-                "{description}"
+                {description}
             </div>
         </div>
     )

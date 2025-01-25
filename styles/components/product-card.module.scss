@@ -80,6 +80,7 @@
 .productListingCard {
     display: flex;
     flex-direction: column;
+    max-width: 245px;
     cursor: pointer;
 
     @include responsive('small') {
@@ -101,8 +102,8 @@
             }
 
             @include responsive('medium') {
-                height: 268px;
-                width: 265px;
+                height: 194px;
+                width: 194px;
             }
         }
     }
@@ -123,7 +124,7 @@
             }
 
             @include responsive('medium') {
-                font-size: 18px;
+                font-size: 13px;
             }
         }
 

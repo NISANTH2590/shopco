@@ -103,7 +103,7 @@ const Footer = () => {
                             SHOP.CO
                         </div>
                         <div className={styles.description}>
-                            We have clothes that suits your style and which you're proud to wear. From women to men.
+                            We have clothes that suits your style and which you&apos;re proud to wear. From women to men.
                         </div>
                         <div className={styles.links}>
                             <div className={styles.imageWrapper}>

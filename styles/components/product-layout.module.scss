@@ -115,19 +115,20 @@
 
     .productListingPageCards {
         display: flex;
-        width: 100%;
         flex-wrap: wrap;
-        justify-content: space-between;
+        // justify-content: space-between;
 
         @include responsive('small') {
             margin-top: 32px;
             gap: 16px;
+            column-gap: 25px;
+            justify-content: center;
         }
 
         @include responsive('medium') {
             margin-top: 55px;
             gap: 20px;
-            justify-content: space-between;
+            column-gap: 50px;
         }
     }
 

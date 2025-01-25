@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 // import { collection, getDocs } from "firebase/firestore";
 // import { db } from "@/config/firebase";
 // import { useEffect, useState } from "react";
@@ -16,7 +16,6 @@ const BrandBanner = () => {
     //             const newData = querySnapshot.docs
     //                 .map((doc) => ({ ...doc.data(), id: doc.id }));
     //             setTodos(newData);
-    //             console.log("querySnapshot",newData);
     //         })
 
     // }

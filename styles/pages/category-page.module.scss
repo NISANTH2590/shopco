@@ -2,18 +2,78 @@
 
 .productListingPageLayout {
 
-    @include responsive('small') {}
-
-    @include responsive('medium') {
-        padding: 20px 100px;
+    @include responsive('small') {
     }
 
+    @include responsive('medium') {
+        padding: 20px 70px;
+    }
     .productsLayout {
-        @include responsive('small') {}
+        width: 100%;
+    }
 
-        @include responsive('medium') {
-            margin: 24px 0px 0px 200px;
+    .productsLayoutWrapper {
+        position: relative;
+        display: flex;
+        gap: 40px;
+
+        .productsLayout {
+            @include responsive('small') {
+            }
+
+            @include responsive('medium') {
+                // margin: 24px 0px 0px 200px;
+            }
         }
     }
 
+}
+
+.pagination {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px;
+
+    @include responsive('small') {
+        margin: 52px 10px 10px 10px;
+    }
+
+    @include responsive('medium') {
+        margin-top: 44px;
+    }
+
+    .paginationNumbers {
+        display: flex;
+
+        @include responsive('small') {
+            margin: 5px;
+            max-width: 100px;
+            text-overflow: ellipsis;
+            overflow-y: hidden;
+            white-space: nowrap;
+            justify-content: space-between;
+        }
+
+        @include responsive('medium') {
+            margin: 10px;
+            justify-content: space-between;
+            min-width: 300px;
+        }
+
+        button {
+            cursor: pointer;
+            white-space: nowrap;
+            padding: 5px;
+        }
+    }
+
+    .paginationPreviousButton,
+    .paginationNextButton {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        gap: 10px;
+    }
 }
