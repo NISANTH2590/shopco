@@ -22,11 +22,6 @@ const ProductLayout = ({ initialData, setMobileFilterVisiblility, title, titleCl
     let [end, setEndIndex] = useState(inputs.length - 1);
     let [moreButtonVisibility, setMoreButtonVisibility] = useState(true);
     let [indexOne, setIndexOne] = useState(1);
-    // useEffect(() => {
-    // console.log("Testing inputs",inputs);
-    // setLayoutDatas(inputs);
-    // }, [inputs]);
-
 
     let updateDatas = () => {
         if (initialDatas >= inputs.length - initialDatas)
@@ -56,27 +51,6 @@ const ProductLayout = ({ initialData, setMobileFilterVisiblility, title, titleCl
             setEndIndex(inputs.length - 1)
         }
     }
-
-    // const [datas, setLayoutDatas] = useState([]);,proddatasDataucts
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         try {
-    //             const querySnapshot = await getDocs(collection(db, "brand-banner"));
-    //             const newData = querySnapshot.docs.map((doc) => ({
-    //                 ...doc.data(),
-    //                 id: doc.id,
-    //             }));
-    //             setLayoutDatas(newData);
-    //         } catch (error) {
-    //             console.error("Error fetching data: ", error);
-    //         }
-    //     }
-
-    // fetchData();
-    //     return () => {
-    //         // Cleanup code here (if necessary)
-    //     };
-    // }, []);
 
     return (
         <div className={styles.productLayoutWrapper} style={filters ? { "padding": "0px" } : null} >

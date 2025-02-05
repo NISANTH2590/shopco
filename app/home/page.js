@@ -1,8 +1,12 @@
+"use client"
 import BrandBanner from "@/components/homepage/brand-banner";
 import HeroSection from "@/components/homepage/hero-content";
+import UseAuth from "@/components/hooks/useAuth";
 import ProductLayout from "@/components/layouts/product-layout";
+import Loader from "@/components/utils/loader";
 import styles from '@/styles/pages/homepage.module.scss';
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const homepage = () => {
 
@@ -127,60 +131,71 @@ const homepage = () => {
     }
   ]
 
+  const [isLoading, setLoading] = useState(true);
+
+  UseAuth();
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 800);
+  }, [])
+
   return (
     <>
-      <HeroSection />
-      <BrandBanner />
-      <ProductLayout titleClassName={'layoutProductTitle'} cardClassName={'productCards'} inputs={productsData} initialData={4} title={'NEW ARRIVALS'} filters={false} actions={false} moreButton={'View All'} />
-      <ProductLayout titleClassName={'layoutProductTitle'} cardClassName={'productCards'} inputs={productsData} initialData={4} title={'TOP SELLING'} filters={false} actions={false} moreButton={'View All'} />
+      {isLoading ? <Loader /> :
+        <>
+          <HeroSection />
+          <BrandBanner />
+          <ProductLayout titleClassName={'layoutProductTitle'} cardClassName={'productCards'} inputs={productsData} initialData={4} title={'NEW ARRIVALS'} filters={false} actions={false} moreButton={'View All'} />
+          <ProductLayout titleClassName={'layoutProductTitle'} cardClassName={'productCards'} inputs={productsData} initialData={4} title={'TOP SELLING'} filters={false} actions={false} moreButton={'View All'} />
 
-      <div className={styles.dressCategory}>
-        <div className={styles.heading}>
-          Browse By Dress Style
-        </div>
-
-        <div className={styles.cards}>
-          <div className={styles.card}>
-            <div className={styles.cardName}>
-              Casual
+          <div className={styles.dressCategory}>
+            <div className={styles.heading}>
+              Browse By Dress Style
             </div>
-            <div className={styles.cardImage}>
-              <Image className={styles.image} alt={'category1'} src={'/10.png'} width={0} height={0} sizes="100vw" />
+
+            <div className={styles.cards}>
+              <div className={styles.card}>
+                <div className={styles.cardName}>
+                  Casual
+                </div>
+                <div className={styles.cardImage}>
+                  <Image className={styles.image} alt={'category1'} src={'/10.png'} width={0} height={0} sizes="100vw" />
+                </div>
+              </div>
+
+              <div className={styles.card}>
+                <div className={styles.cardName}>
+                  Formal
+                </div>
+                <div className={styles.cardImage}>
+                  <Image className={styles.image} alt={'category2'} src={'/12.png'} width={0} height={0} sizes="100vw" />
+                </div>
+              </div>
+
+              <div className={styles.card}>
+                <div className={styles.cardName}>
+                  Party
+                </div>
+                <div className={styles.cardImage}>
+                  <Image className={styles.image} alt={'category3'} src={'/11.png'} width={0} height={0} sizes="100vw" />
+                </div>
+              </div>
+
+              <div className={styles.card}>
+                <div className={styles.cardImage}>
+                  <Image className={styles.image} alt={'category4'} src={'/13.png'} width={0} height={0} sizes="100vw" />
+                </div>
+                <div className={styles.cardName}>
+                  Gym
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <div className={styles.card}>
-            <div className={styles.cardName}>
-              Formal
-            </div>
-            <div className={styles.cardImage}>
-              <Image className={styles.image} alt={'category2'} src={'/12.png'} width={0} height={0} sizes="100vw" />
-            </div>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.cardName}>
-              Party
-            </div>
-            <div className={styles.cardImage}>
-              <Image className={styles.image} alt={'category3'} src={'/11.png'} width={0} height={0} sizes="100vw" />
-            </div>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.cardImage}>
-              <Image className={styles.image} alt={'category4'} src={'/13.png'} width={0} height={0} sizes="100vw" />
-            </div>
-            <div className={styles.cardName}>
-              Gym
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <ProductLayout titleClassName={'layoutCommentsTitle'} cardClassName={'commentCards'} inputs={commentsData} initialData={2} title={'OUR HAPPY CUSTOMERS'} actions={true} />
-    </>
+          <ProductLayout titleClassName={'layoutCommentsTitle'} cardClassName={'commentCards'} inputs={commentsData} initialData={2} title={'OUR HAPPY CUSTOMERS'} actions={true} />
+        </>
+      }</>
   )
 };
 

@@ -2,8 +2,10 @@
 
 import BreadCrumbs from "@/components/bread-crumb";
 import FilterComponent from "@/components/filterComponent";
+import UseAuth from "@/components/hooks/useAuth";
 import UsePagination from "@/components/hooks/usePagination";
 import ProductLayout from "@/components/layouts/product-layout";
+import Loader from "@/components/utils/loader";
 import styles from '@/styles/pages/category-page.module.scss'
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -539,7 +541,11 @@ const CategoryPage = ({ params: { slug } }) => {
     const [selectedPriceFilter, setSelectedPriceFilter] = useState(false);
     const [sortFilter, setSortFilter] = useState(options[0]);
     let [mobileFilterVisibility, setMobileFilterVisiblility] = useState(false);
-
+    const [isLoading, setLoading] = useState(true);
+    UseAuth();
+    useEffect(() => {
+        setTimeout(() => setLoading(false), 800);
+    }, [])
 
     useEffect(() => {
         // Disable scrolling when the animation is complete
@@ -615,27 +621,29 @@ const CategoryPage = ({ params: { slug } }) => {
     }
 
     return (
-        <div className={styles.productListingPageLayout}>
-            <BreadCrumbs />
-
-            <div className={styles.productsLayoutWrapper}>
-                {
-                    categoryPage ?
-                        !isMobile ? <FilterComponent setSelectedColorFilter={setSelectedColorFilter} setSelectedSizeFilter={setSelectedSizeFilter} setSelectedPriceFilter={setSelectedPriceFilter} /> : mobileFilterVisibility ? <FilterComponent setMobileFilterVisiblility={setMobileFilterVisiblility} setSelectedColorFilter={setSelectedColorFilter} setSelectedSizeFilter={setSelectedSizeFilter} setSelectedPriceFilter={setSelectedPriceFilter} /> : null
-                        : null
-                }
-                <div className={styles.productsLayout}>
-                    <ProductLayout setMobileFilterVisiblility={setMobileFilterVisiblility} cardClassName={'productListingPageCards'} titleClassName={'layoutListingTitle'} title={slug} totalProducts={data.length} inputs={paginatedData} initialData={totalDataToBeDisplayed} filters={true} actions={false} setSortFilter={setSortFilter} sortFilter={sortFilter} options={options} />
-                    <UsePagination length={data.length}
-                        postsPerPage={9}
-                        prevButton={prevButton}
-                        nextButton={nextButton}
-                    // handlePagination={handlePagination} 
-                    />
+        <>
+            {isLoading ? <Loader /> :
+                <div className={styles.productListingPageLayout}>
+                    <BreadCrumbs />
+                    <div className={styles.productsLayoutWrapper}>
+                        {
+                            categoryPage ?
+                                !isMobile ? <FilterComponent setSelectedColorFilter={setSelectedColorFilter} setSelectedSizeFilter={setSelectedSizeFilter} setSelectedPriceFilter={setSelectedPriceFilter} /> : mobileFilterVisibility ? <FilterComponent setMobileFilterVisiblility={setMobileFilterVisiblility} setSelectedColorFilter={setSelectedColorFilter} setSelectedSizeFilter={setSelectedSizeFilter} setSelectedPriceFilter={setSelectedPriceFilter} /> : null
+                                : null
+                        }
+                        <div className={styles.productsLayout}>
+                            <ProductLayout setMobileFilterVisiblility={setMobileFilterVisiblility} cardClassName={'productListingPageCards'} titleClassName={'layoutListingTitle'} title={slug} totalProducts={data.length} inputs={paginatedData} initialData={totalDataToBeDisplayed} filters={true} actions={false} setSortFilter={setSortFilter} sortFilter={sortFilter} options={options} />
+                            <UsePagination length={data.length}
+                                postsPerPage={9}
+                                prevButton={prevButton}
+                                nextButton={nextButton}
+                            // handlePagination={handlePagination} 
+                            />
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-        </div>
+            }
+        </>
     );
 }
 

@@ -7,7 +7,6 @@ import Link from "next/link";
 const BreadCrumbs = () => {
 
     const pathNames = usePathname().split('/');
-
     return (
         <div className={styles.breadCrumb}>
             {
@@ -20,7 +19,7 @@ const BreadCrumbs = () => {
                             {path == "category" ? 'category' : !parseInt(path) ? <Link href={`/category/${path}`} >{path}</Link> : null}
                             &nbsp;
                             {
-                                (!parseInt(path)) && (index != pathNames.length - 1) ? `>` : null
+                                (!parseInt(path) && !parseInt(pathNames[index + 1])) && (index != pathNames.length - 1) ? `>` : null
                             }
                             &nbsp;
                         </div>

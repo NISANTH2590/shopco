@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const defaulRating = [1, 1, 1, 1, 1];
 
-const CommentCard = ({ rating, name, description }) => {
-
+const CommentCard = ({ rating, name, description, date }) => {
+    let Data = new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     return (
         <div className={styles.commentCard}>
             <div className={styles.productRating}>
@@ -32,6 +32,12 @@ const CommentCard = ({ rating, name, description }) => {
             <div className={styles.description}>
                 {description}
             </div>
+            {
+                date &&
+                <div className={styles.date}>
+                    Posted on {Data}
+                </div>
+            }
         </div>
     )
 }

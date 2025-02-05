@@ -104,7 +104,7 @@ const SignInSignUpCard = ({ slug }) => {
             </div>
             <Button backgroundColor={'black'} border={'none'} color={'white'} borderRadius={'5px'} name={slug == "signup" ? 'Sign up' : 'Sign in'} height={'40px'} clickFunction={slug == "signup" ? signUpOnSubmit : login} />
             <div className={styles.noAccountSection}>
-                <span className={styles.noAccountText}>{slug == "signup" ? "Don't have an account" : "Already having an account"}&nbsp;&nbsp;</span>
+                <span className={styles.noAccountText}>{slug != "signup" ? "Don't have an account" : "Already having an account"}&nbsp;&nbsp;</span>
                 <Link style={{ 'textDecoration': 'underline', 'fontWeight': '900' }} className={styles.noAccountRedirection} href={slug == "signup" ? '/authentication/login' : '/authentication/signup'}>{slug == "signup" ? 'Login' : 'Signup'}</Link>
             </div>
         </div>

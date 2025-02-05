@@ -1,0 +1,74 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background: white;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.closeBtn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modalBody {
+    margin-top: 20px;
+}
+
+.reviewModal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    div {
+        input {
+            outline: none;
+            padding: 8px;
+            font-size: 12px;
+            border: solid 1px black;
+            border-radius: 5px;
+        }
+
+        textarea {
+            outline: none;
+            min-height: 100px;
+            min-width: 200px;
+            font-size: 12px;
+            padding: 8px;
+            border: solid 1px black;
+            border-radius: 5px;
+        }
+    }
+
+    .submitButton {
+        width: 150px;
+        background-color: #000;
+        cursor: pointer;
+        color: white;
+        font-family: 'SatoshiMedium';
+        border-radius: 17px;
+        padding: 5px;
+        border: solid 2px transparent;
+    }
+}
