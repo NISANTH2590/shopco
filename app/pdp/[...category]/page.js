@@ -12,7 +12,7 @@ import { CreateToast } from "@/components/utils/toast";
 import Loader from "@/components/utils/loader";
 import UseAuth from "@/components/hooks/useAuth";
 
-const productDescriptionPage = ({ params }) => {
+const ProductDescriptionPage = ({ params }) => {
     const router = useRouter();
     const productId = params?.category[params?.category?.length - 1];
     const [product, setProduct] = useState(null);
@@ -232,4 +232,4 @@ const productDescriptionPage = ({ params }) => {
     )
 }
 
-export default productDescriptionPage;
+export default ProductDescriptionPage;

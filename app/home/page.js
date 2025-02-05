@@ -8,7 +8,7 @@ import styles from '@/styles/pages/homepage.module.scss';
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const homepage = () => {
+const Homepage = () => {
 
   const productsData = [
     {
@@ -199,4 +199,4 @@ const homepage = () => {
   )
 };
 
-export default homepage;
+export default Homepage;

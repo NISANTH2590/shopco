@@ -10,7 +10,7 @@ import BreadCrumbs from "@/components/bread-crumb";
 import Image from "next/image";
 import UseAuth from "@/components/hooks/useAuth";
 
-const cartPage = () => {
+const CartPage = () => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [cartItems, setCartItems] = useState(null);
@@ -134,4 +134,4 @@ const cartPage = () => {
     )
 };
 
-export default cartPage;
+export default CartPage;
